@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shamzyraw Graphics Design</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f1f5fa;
+    color:#14213d;
+}
+
+/* ================= LOGIN ================= */
+
+#loginPage{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:linear-gradient(135deg,#041632,#075bd8,#12a9e8);
+}
+
+.login-box{
+    width:100%;
+    max-width:420px;
+    background:white;
+    padding:35px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.30);
+}
+
+.logo{
+    width:95px;
+    height:95px;
+    object-fit:contain;
+    border-radius:15px;
+    margin-bottom:12px;
+}
+
+.login-box h1{
+    color:#075bd8;
+    font-size:29px;
+    letter-spacing:1px;
+}
+
+.tagline{
+    color:#777;
+    font-size:12px;
+    letter-spacing:3px;
+    margin:6px 0 28px;
+}
+
+.login-box h2{
+    margin-bottom:18px;
+}
+
+.login-box input{
+    width:100%;
+    padding:15px;
+    margin:7px 0;
+    border:1px solid #d6dce5;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+}
+
+.login-box input:focus{
+    border:2px solid #075bd8;
+}
+
+.login-btn,
+.create-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.login-btn{
+    margin-top:10px;
+    background:#075bd8;
+    color:white;
+}
+
+.login-btn:hover{
+    background:#0648aa;
+}
+
+.forgot{
+    display:block;
+    margin:17px 0;
+    color:#075bd8;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.create-btn{
+    background:#e8f1ff;
+    color:#075bd8;
+}
+
+
+/* ================= CREATE ACCOUNT ================= */
+
+#registerPage{
+    display:none;
+    min-height:100vh;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:linear-gradient(135deg,#041632,#075bd8,#12a9e8);
+}
+
+.register-box{
+    width:100%;
+    max-width:420px;
+    background:white;
+    padding:35px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.30);
+}
+
+.register-box h2{
+    margin:15px 0 20px;
+}
+
+.register-box input{
+    width:100%;
+    padding:15px;
+    margin:7px 0;
+    border:1px solid #d6dce5;
+    border-radius:10px;
+    outline:none;
+}
+
+.register-btn{
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    background:#075bd8;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.back-login{
+    display:block;
+    margin-top:18px;
+    color:#075bd8;
+    cursor:pointer;
+}
+
+
+/* ================= DASHBOARD ================= */
+
+#dashboard{
+    display:none;
+    min-height:100vh;
+}
+
+.header{
+    background:#061936;
+    color:white;
+    padding:14px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+.brand-name{
+    font-weight:bold;
+    font-size:18px;
+}
+
+.brand-small{
+    display:block;
+    color:#9fc7ff;
+    font-size:10px;
+    letter-spacing:2px;
+    margin-top:3px;
+}
+
+.logout{
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    background:white;
+    color:#061936;
+    cursor:pointer;
+}
+
+
+/* ================= WELCOME ================= */
+
+.welcome{
+    text-align:center;
+    padding:45px 20px 30px;
+}
+
+.welcome h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.welcome p{
+    color:#777;
+}
+
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(270px,1fr));
+
+    gap:24px;
+}
+
+
+/* PRODUCT CARD */
+
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 7px 25px rgba(0,0,0,.09);
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 35px rgba(0,0,0,.14);
+}
+
+
+/* ================= DESIGN PREVIEWS ================= */
+
+.design-preview{
+    height:190px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+}
+
+
+/* FLYER */
+
+.flyer-design{
+    width:135px;
+    height:160px;
+    background:linear-gradient(145deg,#061936,#075bd8);
+    color:white;
+    padding:13px;
+    border-radius:5px;
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+    text-align:center;
+}
+
+.flyer-design .mini-logo{
+    font-size:10px;
+    font-weight:bold;
+}
+
+.flyer-design h4{
+    margin-top:20px;
+    font-size:20px;
+}
+
+.flyer-design p{
+    font-size:8px;
+    margin-top:8px;
+}
+
+.flyer-line{
+    height:5px;
+    background:#19b5ff;
+    margin:12px 0;
+    border-radius:5px;
+}
+
+
+/* BUSINESS CARD */
+
+.business-card{
+    width:220px;
+    height:125px;
+    background:linear-gradient(135deg,#061936,#075bd8);
+    border-radius:9px;
+    color:white;
+    padding:17px;
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+}
+
+.business-card h4{
+    font-size:16px;
+}
+
+.business-card p{
+    font-size:8px;
+    margin-top:7px;
+}
+
+.business-card .contact{
+    margin-top:15px;
+    font-size:8px;
+}
+
+
+/* LOGO */
+
+.logo-design{
+    width:135px;
+    height:135px;
+    border-radius:50%;
+    background:#061936;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    border:7px solid #19b5ff;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.logo-design div{
+    text-align:center;
+}
+
+.logo-design strong{
+    display:block;
+    font-size:18px;
+}
+
+.logo-design span{
+    font-size:7px;
+    letter-spacing:2px;
+}
+
+
+/* BANNER */
+
+.banner-design{
+    width:245px;
+    height:120px;
+    background:linear-gradient(135deg,#061936,#075bd8);
+    border-radius:7px;
+    color:white;
+    padding:18px;
+    box-shadow:0 8px 18px rgba(0,0,0,.2);
+}
+
+.banner-design h4{
+    font-size:19px;
+}
+
+.banner-design p{
+    font-size:9px;
+    margin-top:8px;
+}
+
+.banner-design button{
+    margin-top:10px;
+    background:white;
+    border:0;
+    padding:5px 10px;
+    border-radius:5px;
+    font-size:8px;
+}
+
+
+/* SOCIAL MEDIA */
+
+.social-design{
+    width:145px;
+    height:160px;
+    border-radius:15px;
+    background:linear-gradient(160deg,#ff7a00,#e60073,#5b2cff);
+    color:white;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(0,0,0,.2);
+}
+
+.social-design .circle{
+    width:55px;
+    height:55px;
+    margin:5px auto 12px;
+    border-radius:50%;
+    background:white;
+}
+
+.social-design h4{
+    font-size:14px;
+}
+
+.social-design p{
+    font-size:8px;
+    margin-top:7px;
+}
+
+
+/* MOTION */
+
+.motion-design{
+    width:230px;
+    height:130px;
+    border-radius:10px;
+    background:#061936;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.motion-design:before,
+.motion-design:after{
+    content:"";
+    position:absolute;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    border:3px solid #19b5ff;
+}
+
+.motion-design:before{
+    left:-30px;
+}
+
+.motion-design:after{
+    right:-30px;
+}
+
+.motion-text{
+    z-index:2;
+    text-align:center;
+}
+
+.motion-text strong{
+    display:block;
+    font-size:18px;
+}
+
+.motion-text span{
+    font-size:8px;
+    letter-spacing:2px;
+}
+
+
+/* ================= CARD CONTENT ================= */
+
+.card-content{
+    padding:22px;
+}
+
+.card-content h3{
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.card-content p{
+    color:#777;
+    line-height:1.5;
+    min-height:48px;
+}
+
+.price{
+    color:#075bd8;
+    font-size:23px;
+    margin:17px 0;
+}
+
+.order-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#075bd8;
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.order-btn:hover{
+    background:#0648aa;
+}
+
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp-info{
+    width:90%;
+    max-width:900px;
+    margin:50px auto;
+    padding:30px;
+    text-align:center;
+    background:white;
+    border-radius:18px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.whatsapp-info h2{
+    margin-bottom:10px;
+}
+
+.whatsapp-info p{
+    color:#777;
+    line-height:1.6;
+}
+
+.whatsapp-number{
+    color:#075bd8 !important;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#061936;
+    color:white;
+    text-align:center;
+    padding:28px 15px;
+    margin-top:50px;
+}
+
+footer p{
+    color:#c8d6ea;
+    margin-top:7px;
+    font-size:13px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .login-box,
+    .register-box{
+        padding:25px;
+    }
+
+    .welcome h1{
+        font-size:25px;
+    }
+
+    .header{
+        padding:12px 5%;
+    }
+
+    .brand-name{
+        font-size:15px;
+    }
+
+    .logout{
+        padding:8px 12px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+                     LOGIN
+================================================== -->
+
+<div id="loginPage">
+
+    <div class="login-box">
+
+        <img
+            src="image/logo.png"
+            class="logo"
+            alt="Shamzyraw Logo"
+        >
+
+        <h1>SHAMZYRAW</h1>
+
+        <div class="tagline">
+            GRAPHICS DESIGN
+        </div>
+
+        <h2>Log in</h2>
+
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email address"
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+        >
+
+        <button
+            class="login-btn"
+            onclick="login()"
+        >
+            Log In
+        </button>
+
+        <a
+            class="forgot"
+            href="#"
+            onclick="forgotPassword()"
+        >
+            Forgot password?
+        </a>
+
+        <button
+            class="create-btn"
+            onclick="showRegister()"
+        >
+            Create new account
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+                  CREATE ACCOUNT
+================================================== -->
+
+<div id="registerPage">
+
+    <div class="register-box">
+
+        <img
+            src="image/logo.png"
+            class="logo"
+            alt="Shamzyraw Logo"
+        >
+
+        <h2>Create New Account</h2>
+
+        <input
+            type="text"
+            id="registerName"
+            placeholder="Full name"
+        >
+
+        <input
+            type="email"
+            id="registerEmail"
+            placeholder="Email address"
+        >
+
+        <input
+            type="password"
+            id="registerPassword"
+            placeholder="Create password"
+        >
+
+        <input
+            type="password"
+            id="registerConfirm"
+            placeholder="Confirm password"
+        >
+
+        <button
+            class="register-btn"
+            onclick="createAccount()"
+        >
+            Create Account
+        </button>
+
+        <span
+            class="back-login"
+            onclick="showLogin()"
+        >
+            Already have an account? Log in
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+                    DASHBOARD
+================================================== -->
+
+<div id="dashboard">
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="brand">
+
+            <img
+                src="image/logo.png"
+                alt="Shamzyraw Logo"
+            >
+
+            <div>
+
+                <div class="brand-name">
+                    SHAMZYRAW
+                </div>
+
+                <span class="brand-small">
+                    GRAPHICS DESIGN
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="logout"
+            onclick="logout()"
+        >
+            Log out
+        </button>
+
+    </div>
+
+
+
+    <!-- WELCOME -->
+
+    <div class="welcome">
+
+        <h1>
+            Welcome to Shamzyraw 👋
+        </h1>
+
+        <p>
+            Choose the design you want and order directly through WhatsApp.
+        </p>
+
+    </div>
+
+
+
+    <!-- ==================================================
+                    PRODUCTS
+    ================================================== -->
+
+    <div class="products">
+
+
+        <!-- FLYER -->
+
+        <div class="card">
+
+            <div class="design-preview">
+
+                <div class="flyer-design">
+
+                    <div class="mini-logo">
+                        SHAMZYRAW
+                    </div>
+
+                    <h4>
+                        YOUR<br>
+                        BUSINESS
+                    </h4>
+
+                    <div class="flyer-line"></div>
+
+                    <p>
+                        CREATIVE GRAPHIC DESIGN
+                    </p>
+
+                    <p>
+                        CALL • WHATSAPP • ORDER
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Flyer Design
+                </h3>
+
+                <p>
+                    Professional promotional flyers
+                    for businesses, events and brands.
+                </p>
+
+                <div class="price">
+                    ₦5,000
+                </div>
+
+                <button
+                    class="order-btn"
+                    onclick="orderWhatsApp(
+                        'Flyer Design',
+                        '₦5,000'
+                    )"
+                >
+                    Order Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LOGO -->
+
+        <div class="card">
+
+            <div class="design-preview">
+
+                <div class="logo-design">
+
+                    <div>
+
+                        <strong>
+                            SHAMZYRAW
+                        </strong>
+
+                        <span>
+                            GRAPHICS DESIGN
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Logo Design
+                </h3>
+
+                <p>
+                    Creative and professional logos
+                    that represent your business.
+                </p>
+
+                <div class="price">
+                    ₦10,000
+                </div>
+
+                <button
+                    class="order-btn"
+                    onclick="orderWhatsApp(
+                        'Logo Design',
+                        '₦10,000'
+                    )"
+                >
+                    Order Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BUSINESS CARD -->
+
+        <div class="card">
+
+            <div class="design-preview">
+
+                <div class="business-card">
+
+                    <h4>
+                        SHAMZYRAW
+                    </h4>
+
+                    <p>
+                        GRAPHICS DESIGN
+                    </p>
+
+                    <div class="contact">
+                        09076204391<br>
+                        Professional Design Services
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Business Card
+                </h3>
+
+                <p>
+                    Stylish business cards for
+                    professionals and businesses.
+                </p>
+
+                <div class="price">
+                    ₦3,000
+                </div>
+
+                <button
+                    class="order-btn"
+                    onclick="orderWhatsApp(
+                        'Business Card',
+                        '₦3,000'
+                    )"
+                >
+                    Order Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BANNER -->
+
+        <div class="card">
+
+            <div class="design-preview">
+
+                <div class="banner-design">
+
+                    <h4>
+                        SHAMZYRAW
+                    </h4>
+
+                    <p>
+                        GRAPHICS DESIGN
+                    </p>
+
+                    <p>
+                        BUILD YOUR BRAND
+                        WITH PROFESSIONAL DESIGN
+                    </p>
+
+                    <button>
+                        CONTACT US
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Banner Design
+                </h3>
+
+                <p>
+                    Professional banners for shops,
+                    businesses, events and advertising.
+                </p>
+
+                <div class="price">
+                    ₦7,000
+                </div>
+
+                <button
+                    class="order-btn"
+                    onclick="orderWhatsApp(
+                        'Banner Design',
+                        '₦7,000'
+                    )"
+                >
+                    Order Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="card">
+
+            <div class="design-preview">
+
+                <div class="social-design">
+
+                    <div class="circle"></div>
+
+                    <h4>
+                        SHAMZYRAW
+                    </h4>
+
+                    <p>
+                        SOCIAL MEDIA DESIGN
+                    </p>
+
+                    <p>
+                        GROW YOUR BRAND ONLINE
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Social Media Design
+                </h3>
+
+                <p>
+                    Attractive posts for Instagram,
+                    Facebook, WhatsApp and other platforms.
+                </p>
+
+                <div class="price">
+                    ₦4,000
+                </div>
+
+                <button
+                    class="order-btn"
+                    onclick="orderWhatsApp(
+                        'Social Media Design',
+                        '₦4,000'
+                    )"
+                >
+                    Order Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MOTION GRAPHICS -->
+
+        <div class="card">
+
+            <div class="design-preview">
+
+                <div class="motion-design">
+
+                    <div class="motion-text">
+
+                        <strong>
+                            SHAMZYRAW
+                        </strong>
+
+                        <span>
+                            MOTION GRAPHICS
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>
+                    Motion Graphics
+                </h3>
+
+                <p>
+                    Creative animated graphics for
+                    adverts, social media and businesses.
+                </p>
+
+                <div class="price">
+                    ₦15,000
+                </div>
+
+                <button
+                    class="order-btn"
+                    onclick="orderWhatsApp(
+                        'Motion Graphics',
+                        '₦15,000'
+                    )"
+                >
+                    Order Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+                    WHATSAPP SECTION
+    ================================================== -->
+
+    <div class="whatsapp-info">
+
+        <h2>
+            💬 Order Directly Through WhatsApp
+        </h2>
+
+        <p>
+            Choose any design above and click
+            <strong>Order Now</strong>.
+            Your WhatsApp will open automatically
+            with the design and price already written.
+        </p>
+
+        <p class="whatsapp-number">
+            WhatsApp: 09076204391
+        </p>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            SHAMZYRAW GRAPHICS DESIGN
+        </h3>
+
+        <p>
+            Flyer • Logo • Business Card • Banner
+            • Social Media • Motion Graphics
+        </p>
+
+        <p>
+            Fast Delivery • High Quality • Unlimited Revisions
+        </p>
+
+    </footer>
+
+</div>
+
+
+
+<script>
+
+/* ==================================================
+                 SHOW REGISTER
+================================================== */
+
+function showRegister(){
+
+    document.getElementById("loginPage").style.display="none";
+
+    document.getElementById("registerPage").style.display="flex";
+
+}
+
+
+/* ==================================================
+                 SHOW LOGIN
+================================================== */
+
+function showLogin(){
+
+    document.getElementById("registerPage").style.display="none";
+
+    document.getElementById("loginPage").style.display="flex";
+
+}
+
+
+/* ==================================================
+                 CREATE ACCOUNT
+================================================== */
+
+function createAccount(){
+
+    let name =
+        document.getElementById("registerName").value.trim();
+
+    let email =
+        document.getElementById("registerEmail").value.trim();
+
+    let password =
+        document.getElementById("registerPassword").value;
+
+    let confirm =
+        document.getElementById("registerConfirm").value;
+
+
+    if(
+        name === "" ||
+        email === "" ||
+        password === "" ||
+        confirm === ""
+    ){
+
+        alert("Please fill in all the fields.");
+
+        return;
+    }
+
+
+    if(password.length < 6){
+
+        alert(
+            "Password must be at least 6 characters."
+        );
+
+        return;
+    }
+
+
+    if(password !== confirm){
+
+        alert(
+            "Passwords do not match."
+        );
+
+        return;
+    }
+
+
+    localStorage.setItem(
+        "shamzyrawName",
+        name
+    );
+
+    localStorage.setItem(
+        "shamzyrawEmail",
+        email
+    );
+
+    localStorage.setItem(
+        "shamzyrawPassword",
+        password
+    );
+
+
+    alert(
+        "Account created successfully! 🎉\n\nYou can now log in."
+    );
+
+
+    document.getElementById(
+        "loginEmail"
+    ).value = email;
+
+
+    showLogin();
+
+}
+
+
+
+/* ==================================================
+                       LOGIN
+================================================== */
+
+function login(){
+
+    let email =
+        document.getElementById("loginEmail").value.trim();
+
+    let password =
+        document.getElementById("loginPassword").value;
+
+
+    let savedEmail =
+        localStorage.getItem("shamzyrawEmail");
+
+    let savedPassword =
+        localStorage.getItem("shamzyrawPassword");
+
+
+    if(email === "" || password === ""){
+
+        alert(
+            "Please enter your email and password."
+        );
+
+        return;
+    }
+
+
+    if(savedEmail === null){
+
+        alert(
+            "No account found.\n\nPlease click Create new account first."
+        );
+
+        return;
+    }
+
+
+    if(
+        email !== savedEmail ||
+        password !== savedPassword
+    ){
+
+        alert(
+            "Incorrect email or password."
+        );
+
+        return;
+    }
+
+
+    document.getElementById(
+        "loginPage"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "dashboard"
+    ).style.display="block";
+
+}
+
+
+
+/* ==================================================
+                       LOGOUT
+================================================== */
+
+function logout(){
+
+    document.getElementById(
+        "dashboard"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "loginPage"
+    ).style.display="flex";
+
+
+    document.getElementById(
+        "loginPassword"
+    ).value="";
+
+}
+
+
+
+/* ==================================================
+                  FORGOT PASSWORD
+================================================== */
+
+function forgotPassword(){
+
+    let savedEmail =
+        localStorage.getItem("shamzyrawEmail");
+
+
+    if(savedEmail === null){
+
+        alert(
+            "No account has been created yet."
+        );
+
+        return;
+    }
+
+
+    alert(
+        "Your account email is:\n\n" +
+        savedEmail +
+        "\n\nFor this demo, please create a new account if you forget your password."
+    );
+
+}
+
+
+
+/* ==================================================
+                    WHATSAPP ORDER
+================================================== */
+
+function orderWhatsApp(
+    design,
+    price
+){
+
+    /*
+       YOUR WHATSAPP NUMBER
+
+       09076204391
+
+       International format:
+       2349076204391
+    */
+
+    let phone =
+        "2349076204391";
+
+
+    let customerName =
+        localStorage.getItem("shamzyrawName");
+
+
+    if(customerName === null){
+
+        customerName = "Customer";
+
+    }
+
+
+    let message =
+        "Hello Shamzyraw Graphics Design 👋\n\n" +
+
+        "My name is " +
+        customerName +
+        ".\n\n" +
+
+        "I want to order a design.\n\n" +
+
+        "Design: " +
+        design +
+        "\n" +
+
+        "Price: " +
+        price +
+        "\n\n" +
+
+        "Please tell me what information " +
+        "you need from me to start my order.";
+
+
+    let whatsappURL =
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
